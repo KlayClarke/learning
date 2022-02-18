@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  background-color: gray;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+i {
+  cursor: pointer;
+}
+
+i:hover {
+  transform: scale(1.25);
+}
+
+img {
+  width: 300px;
+  height: 150px;
+}
+
+#image-carousel {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#frame {
+  background-color: white;
+  width: 300px;
+  height: 150px;
+}
+
+#bottom-contain {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#nav-dots-holder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.nav-dot {
+  color: white;
+}
+
+.active {
+  transform: scale(1.5);
+}
