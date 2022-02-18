@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Comment</title>
+  </head>
+  <body>
+    <h1>Edit Comment Below</h1>
+    <section>
+      <form
+        action="http://localhost:3000/comments/<%= comment.id %>?_method=PATCH "
+        method="POST"
+      >
+        <label for="comment"> <b>Comment</b> </label><br />
+        <textarea
+          name="comment"
+          id="comment"
+          cols="30"
+          rows="10"
+          placeholder="comment"
+        >
+ <%= comment.comment %> </textarea
+        >
+        <br />
+        <button type="submit">Submit Comment Revision</button>
+      </form>
+      <a href="/comments" style="text-decoration: none">Back To Index</a>
+    </section>
+  </body>
+</html>

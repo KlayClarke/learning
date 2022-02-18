@@ -1,0 +1,11 @@
+@font-face {
+  font-family: "MyFont";
+  src: url("");
+  font-weight: 600;
+  font-style: italic;
+}
+
+.hello {
+  font-family: "MyFont";
+  color: red;
+}

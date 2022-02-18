@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TV Show Search</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+
+  <body>
+    <h1>TV Show Search</h1>
+    <form id="searchForm">
+      <input
+        id="search-input"
+        type="text"
+        placeholder="TV Show Title"
+        name="query"
+      />
+      <button id="search-button">Search</button>
+    </form>
+    <ul id="show-display">
+      <li id="show-info" style="list-style-type: none">
+        <h4 id="show-title"></h4>
+        <img id="show-img" src="" alt="" />
+      </li>
+    </ul>
+    <script src="app.js"></script>
+  </body>
+</html>

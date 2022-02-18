@@ -1,0 +1,425 @@
+(base) klayclarke@Klays-MBP ~ % brew tap mongodb/brew
+Running `brew update --preinstall`...
+==> Auto-updated Homebrew!
+Updated 3 taps (homebrew/core, homebrew/cask and twilio/brew).
+==> New Formulae
+bash-language-server mold
+chroma openliberty-jakartaee9
+coursier openliberty-webprofile9
+etcd-cpp-apiv3 seaweedfs
+fypp sniffer
+grafana-agent solargraph
+hurl sqlfluff
+kubernetes-cli@1.22 teku
+libgrape-lite yaml-language-server
+lighthouse zsh-fast-syntax-highlighting
+mcfly
+==> Updated Formulae
+Updated 1166 formulae.
+==> Deleted Formulae
+dlite exomizer git-hooks hardlink-osx whohas
+==> New Casks
+citrix-workspace macloggerdx tidgi
+dataspell macrorecorder vale-server
+equinox moradownloader vlc-setup
+fastmarks only-switch vpn-tracker-365
+folder-colorizer pd-runner waltr-heic-converter
+jt-bridge remotehamradio wsjtx
+kdrive shapr3d
+linearmouse sioyek
+==> Updated Casks
+Updated 569 casks.
+==> Deleted Casks
+delayedlauncher harvest visicut
+
+==> Tapping mongodb/brew
+Cloning into '/usr/local/Homebrew/Library/Taps/mongodb/homebrew-brew'...
+remote: Enumerating objects: 806, done.
+remote: Counting objects: 100% (303/303), done.
+remote: Compressing objects: 100% (217/217), done.
+remote: Total 806 (delta 153), reused 140 (delta 83), pack-reused 503
+Receiving objects: 100% (806/806), 176.54 KiB | 2.76 MiB/s, done.
+Resolving deltas: 100% (391/391), done.
+Tapped 14 formulae (30 files, 241.7KB).
+(base) klayclarke@Klays-MBP ~ % brew install mongodb-community@5.0
+
+==> Downloading https://fastdl.mongodb.org/tools/db/mongodb-database-tools-macos
+######################################################################## 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/c-ares/manifests/1.18.1_1
+######################################################################## 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/c-ares/blobs/sha256:62b9590a3b9
+==> Downloading from https://pkg-containers.githubusercontent.com/ghcr1/blobs/sh
+######################################################################## 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/macos-term-size/manifests/1.0.0
+######################################################################## 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/macos-term-size/blobs/sha256:c9
+==> Downloading from https://pkg-containers.githubusercontent.com/ghcr1/blobs/sh
+######################################################################## 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/node/14/manifests/14.18.2
+######################################################################## 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/node/14/blobs/sha256:103fd4f0e7
+==> Downloading from https://pkg-containers.githubusercontent.com/ghcr1/blobs/sh
+######################################################################## 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/mongosh/manifests/1.1.7
+######################################################################## 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/mongosh/blobs/sha256:e8ba1abff3
+==> Downloading from https://pkg-containers.githubusercontent.com/ghcr1/blobs/sh
+######################################################################## 100.0%
+==> Downloading https://fastdl.mongodb.org/osx/mongodb-macos-x86_64-5.0.4.tgz
+######################################################################## 100.0%
+==> Installing mongodb-community from mongodb/brew
+==> Installing dependencies for mongodb/brew/mongodb-community: mongodb-database-tools, c-ares, macos-term-size, node@14 and mongosh
+==> Installing mongodb/brew/mongodb-community dependency: mongodb-database-
+🍺 /usr/local/Cellar/mongodb-database-tools/100.5.1: 13 files, 115.7MB, built in 6 seconds
+==> Installing mongodb/brew/mongodb-community dependency: c-ares
+==> Pouring c-ares--1.18.1_1.monterey.bottle.tar.gz
+🍺 /usr/local/Cellar/c-ares/1.18.1_1: 87 files, 645.3KB
+==> Installing mongodb/brew/mongodb-community dependency: macos-term-size
+==> Pouring macos-term-size--1.0.0.monterey.bottle.tar.gz
+🍺 /usr/local/Cellar/macos-term-size/1.0.0: 5 files, 52.6KB
+==> Installing mongodb/brew/mongodb-community dependency: node@14
+==> Pouring node@14--14.18.2.monterey.bottle.tar.gz
+🍺 /usr/local/Cellar/node@14/14.18.2: 3,923 files, 53.3MB
+==> Installing mongodb/brew/mongodb-community dependency: mongosh
+==> Pouring mongosh--1.1.7.monterey.bottle.tar.gz
+🍺 /usr/local/Cellar/mongosh/1.1.7: 5,613 files, 32.4MB
+==> Installing mongodb/brew/mongodb-community
+==> Caveats
+To start mongodb/brew/mongodb-community now and restart at login:
+brew services start mongodb/brew/mongodb-community
+Or, if you don't want/need a background service you can just run:
+mongod --config /usr/local/etc/mongod.conf
+==> Summary
+🍺 /usr/local/Cellar/mongodb-community/5.0.4: 11 files, 181.4MB, built in 6 seconds
+==> Running `brew cleanup mongodb-community`...
+Disable this behaviour by setting HOMEBREW_NO_INSTALL_CLEANUP.
+Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
+Warning: The following dependents of upgraded formulae are outdated but will not
+be upgraded because they are not bottled:
+twilio
+==> Upgrading 1 dependent:
+Disable this behaviour by setting HOMEBREW_NO_INSTALLED_DEPENDENTS_CHECK.
+Hide these hints with HOMEBREW_NO_ENV_HINTS (see `man brew`).
+node 17.2.0 -> 17.3.0
+==> Downloading https://ghcr.io/v2/homebrew/core/node/manifests/17.3.0
+######################################################################## 100.0%
+==> Downloading https://ghcr.io/v2/homebrew/core/node/blobs/sha256:d2ca921aa8849
+==> Downloading from https://pkg-containers.githubusercontent.com/ghcr1/blobs/sh
+######################################################################## 100.0%
+==> Upgrading node
+17.2.0 -> 17.3.0
+
+==> Pouring node--17.3.0.monterey.bottle.tar.gz
+Error: The `brew link` step did not complete successfully
+The formula built, but is not symlinked into /usr/local
+Could not symlink bin/node
+Target /usr/local/bin/node
+already exists. You may want to remove it:
+rm '/usr/local/bin/node'
+
+To force the link and overwrite all conflicting files:
+brew link --overwrite node
+
+To list all files that would be deleted:
+brew link --overwrite --dry-run node
+
+Possible conflicting files are:
+/usr/local/bin/node
+/usr/local/include/node/common.gypi
+/usr/local/include/node/config.gypi
+/usr/local/include/node/cppgc/common.h
+/usr/local/include/node/js_native_api.h
+/usr/local/include/node/js_native_api_types.h
+/usr/local/include/node/libplatform/libplatform-export.h
+/usr/local/include/node/libplatform/libplatform.h
+/usr/local/include/node/libplatform/v8-tracing.h
+/usr/local/include/node/node.h
+/usr/local/include/node/node_api.h
+/usr/local/include/node/node_api_types.h
+/usr/local/include/node/node_buffer.h
+/usr/local/include/node/node_object_wrap.h
+/usr/local/include/node/node_version.h
+/usr/local/include/node/v8-internal.h
+/usr/local/include/node/v8-platform.h
+/usr/local/include/node/v8-profiler.h
+/usr/local/include/node/v8-version.h
+/usr/local/include/node/v8.h
+/usr/local/include/node/v8config.h
+/usr/local/share/doc/node/gdbinit
+/usr/local/share/doc/node/lldb_commands.py
+/usr/local/share/man/man1/node.1
+/usr/local/share/systemtap/tapset/node.stp
+/usr/local/lib/dtrace/node.d
+==> Summary
+🍺 /usr/local/Cellar/node/17.3.0: 1,976 files, 45.8MB
+==> Running `brew cleanup node`...
+Removing: /usr/local/Cellar/node/17.2.0... (2,018 files, 45.8MB)
+==> Checking for dependents of upgraded formulae...
+==> No broken dependents found!
+==> Caveats
+==> mongodb-community
+To start mongodb/brew/mongodb-community now and restart at login:
+brew services start mongodb/brew/mongodb-community
+Or, if you don't want/need a background service you can just run:
+mongod --config /usr/local/etc/mongod.conf
+(base) klayclarke@Klays-MBP ~ % brew services start mongodb-community@5.0
+
+==> Tapping homebrew/services
+Cloning into '/usr/local/Homebrew/Library/Taps/homebrew/homebrew-services'...
+remote: Enumerating objects: 1652, done.
+remote: Counting objects: 100% (531/531), done.
+remote: Compressing objects: 100% (388/388), done.
+remote: Total 1652 (delta 226), reused 354 (delta 130), pack-reused 1121
+Receiving objects: 100% (1652/1652), 480.11 KiB | 3.33 MiB/s, done.
+Resolving deltas: 100% (703/703), done.
+Tapped 1 command (44 files, 614.9KB).
+==> Successfully started `mongodb-community` (label: homebrew.mxcl.mongodb-commu
+(base) klayclarke@Klays-MBP ~ % mongo
+MongoDB shell version v5.0.4
+connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+Implicit session: session { "id" : UUID("190156ab-2bd5-4e08-b685-9add4328a0af") }
+MongoDB server version: 5.0.4
+================
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+Welcome to the MongoDB shell.
+For interactive help, type "help".
+For more comprehensive documentation, see
+https://docs.mongodb.com/
+Questions? Try the MongoDB Developer Community Forums
+https://community.mongodb.com
+
+---
+
+The server generated these startup warnings when booting:
+2021-12-30T12:00:12.653-05:00: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+
+---
+
+---
+
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+
+---
+
+> help
+
+    db.help()                    help on db methods
+    db.mycoll.help()             help on collection methods
+    sh.help()                    sharding helpers
+    rs.help()                    replica set helpers
+    help admin                   administrative help
+    help connect                 connecting to a db help
+    help keys                    key shortcuts
+    help misc                    misc things to know
+    help mr                      mapreduce
+
+    show dbs                     show database names
+    show collections             show collections in current database
+    show users                   show users in current database
+    show profile                 show most recent system.profile entries with time >= 1ms
+    show logs                    show the accessible logger names
+    show log [name]              prints out the last segment of log in memory, 'global' is default
+    use <db_name>                set current database
+    db.mycoll.find()             list objects in collection mycoll
+    db.mycoll.find( { a : 1 } )  list objects in mycoll where a == 1
+    it                           result of the last line evaluated; use to further iterate
+    DBQuery.shellBatchSize = x   set default number of items to display on shell
+    exit                         quit the mongo shell
+
+> 1+2
+> 3
+> 'hello'.toUpperCase()
+> HELLO
+> db
+> test
+> show dbs
+> admin 0.000GB
+> config 0.000GB
+> local 0.000GB
+> use animalShelter
+> switched to db animalShelter
+> show dbs
+> admin 0.000GB
+> config 0.000GB
+> local 0.000GB
+> ^C
+> bye
+> (base) klayclarke@Klays-MBP ~ % show dbs
+> zsh: command not found: show
+> (base) klayclarke@Klays-MBP ~ % mongo
+> MongoDB shell version v5.0.4
+> connecting to: mongodb://127.0.0.1:27017/?compressors=disabled&gssapiServiceName=mongodb
+> Implicit session: session { "id" : UUID("cef1d7ab-6578-4556-9a56-8927c36475da") }
+
+# MongoDB server version: 5.0.4
+
+Warning: the "mongo" shell has been superseded by "mongosh",
+which delivers improved usability and compatibility.The "mongo" shell has been deprecated and will be removed in
+an upcoming release.
+For installation instructions, see
+https://docs.mongodb.com/mongodb-shell/install/
+================
+
+---
+
+The server generated these startup warnings when booting:
+2021-12-30T12:00:12.653-05:00: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+
+---
+
+---
+
+        Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+        metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+        The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+        and anyone you share the URL with. MongoDB may use this information to make product
+        improvements and to suggest MongoDB products and deployment options to you.
+
+        To enable free monitoring, run the following command: db.enableFreeMonitoring()
+        To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+
+---
+
+> show dbs
+> admin 0.000GB
+> config 0.000GB
+> local 0.000GB
+> use animalShelter
+> switched to db animalShelter
+> ls
+> [native code]
+> show dbs
+> admin 0.000GB
+> config 0.000GB
+> local 0.000GB
+> db
+> animalShelter
+> show collections
+> db.dogs.insertOne({name: "Charlie", age: 3, breed: "corgi", catFriendly: true})
+> {
+
+    "acknowledged" : true,
+    "insertedId" : ObjectId("61cde79574ba83c98001ab9a")
+
+}
+
+> show collections
+> dogs
+> db.dogs.find
+> function(query, fields, limit, skip, batchSize, options) {
+
+    var cursor = new DBQuery(this._mongo,
+                             this._db,
+                             this,
+                             this._fullName,
+                             this._massageObject(query),
+                             fields,
+                             limit,
+                             skip,
+                             batchSize,
+                             options || this.getQueryOptions());
+
+    {
+        const session = this.getDB().getSession();
+
+        const readPreference = session._getSessionAwareClient().getReadPreference(session);
+        if (readPreference !== null) {
+            cursor.readPref(readPreference.mode, readPreference.tags);
+        }
+
+        const client = session._getSessionAwareClient();
+        const readConcern = client.getReadConcern(session);
+        if (readConcern !== null &&
+            client.canUseReadConcern(session, cursor._convertToCommand(true))) {
+            cursor.readConcern(readConcern.level);
+        }
+    }
+
+    return cursor;
+
+}
+
+> db.dogs.find()
+> { "\_id" : ObjectId("61cde79574ba83c98001ab9a"), "name" : "Charlie", "age" : 3, "breed" : "corgi", "catFriendly" : true }
+> db.dogs.insert([{name: "Wyatt", breed: "Golden", age: 14, catFriendly: false}, {name: "Tonya", breed: "Chihuahua", age: 17, catFriendly: false}])
+> BulkWriteResult({
+
+    "writeErrors" : [ ],
+    "writeConcernErrors" : [ ],
+    "nInserted" : 2,
+    "nUpserted" : 0,
+    "nMatched" : 0,
+    "nModified" : 0,
+    "nRemoved" : 0,
+    "upserted" : [ ]
+
+})
+
+> db.dogs.find()
+> { "\_id" : ObjectId("61cde79574ba83c98001ab9a"), "name" : "Charlie", "age" : 3, "breed" : "corgi", "catFriendly" : true }
+> { "\_id" : ObjectId("61cde84074ba83c98001ab9b"), "name" : "Wyatt", "breed" : "Golden", "age" : 14, "catFriendly" : false }
+> { "\_id" : ObjectId("61cde84074ba83c98001ab9c"), "name" : "Tonya", "breed" : "Chihuahua", "age" : 17, "catFriendly" : false }
+> db.cats.insert({name: "Blue Steel", age: 6, dogFriendly: false, breed: "Scottish Fold"})
+> WriteResult({ "nInserted" : 1 })
+> db.cats.find()
+> { "\_id" : ObjectId("61cde89374ba83c98001ab9d"), "name" : "Blue Steel", "age" : 6, "dogFriendly" : false, "breed" : "Scottish Fold" }
+> use local
+> switched to db local
+> db.dogs.find()
+> db.cats.find()
+> use animalShelter
+> switched to db animalShelter
+> db.dogs.find()
+> { "\_id" : ObjectId("61cde79574ba83c98001ab9a"), "name" : "Charlie", "age" : 3, "breed" : "corgi", "catFriendly" : true }
+> { "\_id" : ObjectId("61cde84074ba83c98001ab9b"), "name" : "Wyatt", "breed" : "Golden", "age" : 14, "catFriendly" : false }
+> { "\_id" : ObjectId("61cde84074ba83c98001ab9c"), "name" : "Tonya", "breed" : "Chihuahua", "age" : 17, "catFriendly" : false }
+> db.cats.find()
+> { "\_id" : ObjectId("61cde89374ba83c98001ab9d"), "name" : "Blue Steel", "age" : 6, "dogFriendly" : false, "breed" : "Scottish Fold" }
+> clear
+> uncaught exception: ReferenceError: clear is not defined :
+> @(shell):1:1
+> db.cats.find()
+> { "\_id" : ObjectId("61cde89374ba83c98001ab9d"), "name" : "Blue Steel", "age" : 6, "dogFriendly" : false, "breed" : "Scottish Fold" }
+> db.dogs.find()
+> { "\_id" : ObjectId("61cde79574ba83c98001ab9a"), "name" : "Charlie", "age" : 3, "breed" : "corgi", "catFriendly" : true }
+> { "\_id" : ObjectId("61cde84074ba83c98001ab9b"), "name" : "Wyatt", "breed" : "Golden", "age" : 14, "catFriendly" : false }
+> { "\_id" : ObjectId("61cde84074ba83c98001ab9c"), "name" : "Tonya", "breed" : "Chihuahua", "age" : 17, "catFriendly" : false }
+> db.dogs.find({breed: "Corgi"})
+>
+> db.dogs.find({breed: "corgi"})
+> { "\_id" : ObjectId("61cde79574ba83c98001ab9a"), "name" : "Charlie", "age" : 3, "breed" : "corgi", "catFriendly" : true }
+> db.dogs.find({catFriendly: true})
+> { "\_id" : ObjectId("61cde79574ba83c98001ab9a"), "name" : "Charlie", "age" : 3, "breed" : "corgi", "catFriendly" : true }
+> db.dogs.find()
+> { "\_id" : ObjectId("61cde79574ba83c98001ab9a"), "name" : "Charlie", "age" : 3, "breed" : "corgi", "catFriendly" : true }
+> { "\_id" : ObjectId("61cde84074ba83c98001ab9b"), "name" : "Wyatt", "breed" : "Golden", "age" : 14, "catFriendly" : false }
+> { "\_id" : ObjectId("61cde84074ba83c98001ab9c"), "name" : "Tonya", "breed" : "Chihuahua", "age" : 17, "catFriendly" : false }
+> db.dogs.updateOne({name: "Charlie"}, {age: 4})
+> uncaught exception: Error: the update operation document must contain atomic operators :
+> DBCollection.prototype.updateOne@src/mongo/shell/crud_api.js:565:19
+> @(shell):1:1
+> db.dogs.updateOne({name: "Charlie"}, {$set:{age: 4}})
+> { "acknowledged" : true, "matchedCount" : 1, "modifiedCount" : 1 }
+> db.dogs.find()
+> { "\_id" : ObjectId("61cde79574ba83c98001ab9a"), "name" : "Charlie", "age" : 4, "breed" : "corgi", "catFriendly" : true }
+> { "\_id" : ObjectId("61cde84074ba83c98001ab9b"), "name" : "Wyatt", "breed" : "Golden", "age" : 14, "catFriendly" : false }
+> { "\_id" : ObjectId("61cde84074ba83c98001ab9c"), "name" : "Tonya", "breed" : "Chihuahua", "age" : 17, "catFriendly" : false }
+> db.dogs.deleteMany({catFriendly: true})
+> { "acknowledged" : true, "deletedCount" : 1 }
+> db.dogs.find()
+> { "\_id" : ObjectId("61cde84074ba83c98001ab9b"), "name" : "Wyatt", "breed" : "Golden", "age" : 14, "catFriendly" : false }
+> { "\_id" : ObjectId("61cde84074ba83c98001ab9c"), "name" : "Tonya", "breed" : "Chihuahua", "age" : 17, "catFriendly" : false }

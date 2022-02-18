@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head> </head>
+  <body>
+    <h1>Race Registration!</h1>
+    <form action="">
+      <div>
+        <label for="fname">First Name</label>
+        <input type="text" required />
+        <label for="lname">Last Name</label>
+        <input type="text" required />
+      </div>
+      <div>
+        <p>Select a Race:</p>
+
+        <input type="radio" id="funrun5k" name="race" required />
+        <label for="funrun5k">Fun Run 5k</label>
+        <br />
+        <input type="radio" id="halfmarathon" name="race" required />
+        <label for="halfmarathon">Half Marathon</label>
+        <br />
+        <input type="radio" id="fullmarathon" name="race" required />
+        <label for="fullmarathon">Full Marathon</label>
+        <br />
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" required />
+        <label for="password">Password</label>
+        <input type="password" id="password" required />
+        <br />
+        <label for="">Select Age Group</label>
+        <select name="age" id="age" required>
+          <option value="">None</option>
+          <option value="kids">under 18</option>
+          <option value="youngadults">18-30</option>
+          <option value="adults">30-50</option>
+          <option value="seniors">50+</option>
+        </select>
+      </div>
+      <button>Register</button>
+    </form>
+  </body>
+</html>
+
+<!-- Span is inline, does not take up own block content - perfect
+for styling certiain words in paragraph -->
