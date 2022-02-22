@@ -6,10 +6,9 @@ class Overview extends Component {
   }
 
   render() {
+    let key = 0;
     const tasks = this.props.tasks;
-    const taskItems = tasks.map((task) => (
-      <li key={tasks.indexOf(task)}>{task}</li>
-    ));
+    const taskItems = tasks.map((task) => <li key={key++}>{task}</li>);
     return <ul>{taskItems}</ul>;
   }
 }
