@@ -1,7 +1,6 @@
 import React from "react";
 
-function MyComponent(props) {
-  const { title } = props;
+function MyComponent({ title }) {
   return <div>{title}</div>;
 }
 
