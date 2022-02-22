@@ -19,6 +19,7 @@ class App extends Component {
   }
 
   render() {
+    const { tasks } = this.state;
     return (
       <div>
         <form>
@@ -28,7 +29,7 @@ class App extends Component {
             Add Task
           </button>
         </form>
-        <Overview tasks={this.state.tasks} />
+        <Overview tasks={tasks} />
       </div>
     );
   }
