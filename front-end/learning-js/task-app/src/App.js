@@ -48,7 +48,7 @@ class App extends Component {
             Add Task
           </button>
         </form>
-        <h3>...</h3>
+        <h3></h3>
         <Overview tasks={tasks} />
       </div>
     );
