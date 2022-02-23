@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+import { Link } from "react-router-dom";
 
 const Shop = () => {
   const [items, setItems] = useState([]);
@@ -16,13 +17,13 @@ const Shop = () => {
     fetchItems();
   }, []);
 
-  let itemKey = 0;
-
   return (
     <div>
       <main>
         {items.map((item) => (
-          <h1 key={item.itemId}>{item.item.name}</h1>
+          <Link to={`/shop/${item.itemId}`} key={item.itemId}>
+            <h1 key={item.itemId}>{item.item.name}</h1>
+          </Link>
         ))}
       </main>
     </div>
