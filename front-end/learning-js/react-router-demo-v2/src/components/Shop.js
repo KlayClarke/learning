@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import "./App.css";
+import "../App.css";
 import { Link } from "react-router-dom";
 
 const Shop = () => {
@@ -21,9 +21,11 @@ const Shop = () => {
     <div>
       <main>
         {items.map((item) => (
-          <Link to={`/shop/${item.itemId}`} key={item.itemId}>
-            <h1 key={item.itemId}>{item.item.name}</h1>
-          </Link>
+          <h1 key={item.itemId}>
+            <Link to={`/shop/${item.itemId}`} key={item.itemId}>
+              {item.item.name}
+            </Link>
+          </h1>
         ))}
       </main>
     </div>
