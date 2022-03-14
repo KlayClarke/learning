@@ -10,6 +10,7 @@ body {
 
 a {
   color: #00b7ff;
+  text-decoration: none;
 }
 
 li {
@@ -24,6 +25,12 @@ ul span {
 .sidebar-nav {
   margin-top: 20px;
   padding: 0;
+}
+
+.text-success,
+.text-danger,
+.text-warning {
+  width: 100px;
 }
 
 .text-success {
