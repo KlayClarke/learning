@@ -7,7 +7,7 @@ let async = require("async");
 
 // display site index
 
-exports.index = function (req, res) {
+exports.index = function (req, res, next) {
   async.parallel(
     {
       book_count: function (callback) {
