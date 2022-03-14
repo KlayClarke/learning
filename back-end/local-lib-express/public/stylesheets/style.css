@@ -13,6 +13,10 @@ a {
   text-decoration: none;
 }
 
+p {
+  margin: 20px;
+}
+
 li {
   list-style: none;
   margin: 15px;
