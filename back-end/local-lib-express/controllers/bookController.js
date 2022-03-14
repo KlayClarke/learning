@@ -1,9 +1,39 @@
 let Book = require("../models/book");
+let Author = require("../models/author");
+let Genre = require("../models/genre");
+let BookInstance = require("../models/bookinstance");
+
+let async = require("async");
 
 // display site index
 
 exports.index = function (req, res) {
-  res.send("NOT IMPLEMENTED: Site Home Page");
+  async.parallel(
+    {
+      book_count: function (callback) {
+        Book.countDocuments({}, callback); // pass empty object as match condition to find all documents of this collection
+      },
+      book_instance_count: function (callback) {
+        BookInstance.countDocuments({}, callback);
+      },
+      book_instance_available_count: function (callback) {
+        BookInstace.countDocuments({ status: "Available" }, callback);
+      },
+      author_count: function (callback) {
+        Author.countDocuments({}, callback);
+      },
+      genre_count: function (callback) {
+        Genre.countDocuments({}, callback);
+      },
+    },
+    function (err, results) {
+      res.render("index", {
+        title: "Local Library Home",
+        error: err,
+        data: results,
+      });
+    }
+  );
 };
 
 // display list of all books
