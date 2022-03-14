@@ -1,6 +1,7 @@
-let mongoose = require("mongoose");
+const mongoose = require("mongoose");
+const { DateTime } = require("luxon");
 
-let Schema = mongoose.Schema;
+const Schema = mongoose.Schema;
 
 let BookInstanceSchema = new Schema({
   book: { type: Schema.Types.ObjectId, ref: "Book", required: true },
@@ -18,6 +19,12 @@ let BookInstanceSchema = new Schema({
 
 BookInstanceSchema.virtual("url").get(function () {
   return `/catalog/bookinstance/${this._id}`;
+});
+
+// virtual for formatted due back date
+
+BookInstanceSchema.virtual("due_back_formatted").get(function () {
+  return DateTime.fromJSDate(this.due_back).toLocaleString(DateTime.DATE_MED);
 });
 
 // export bookinstance model
