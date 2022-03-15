@@ -1,9 +1,8 @@
+let async = require("async");
 let mongoose = require("mongoose");
-
 let Genre = require("../models/genre");
 let Book = require("../models/book");
-
-let async = require("async");
+const { body, validationResult } = require("express-validator");
 
 // display list of all genres
 
@@ -56,15 +55,57 @@ exports.genre_detail = function (req, res, next) {
 
 // display genre create form on GET
 
-exports.genre_create_get = function (req, res) {
-  res.send("NOT IMPLEMENTED: Genre create GET");
+exports.genre_create_get = function (req, res, next) {
+  res.render("genre_form", { title: "Create Genre" });
 };
 
 // handle genre create on POST
 
-exports.genre_create_post = function (req, res) {
-  res.send("NOT IMPLEMENTED: Genre create POST");
-};
+exports.genre_create_post = [
+  // validate and sanitize the name field
+  body("name", "Genre name required").trim().isLength({ min: 1 }).escape(),
+
+  // process request after validation and sanitization
+  (req, res, next) => {
+    // extract the validation errors from a request
+    const errors = validationResult(req);
+
+    // create a genre object with escaped and trimmed data
+    let genre = new Genre({
+      name: req.body.name,
+    });
+
+    if (!errors.isEmpty()) {
+      // there are errors - render the form again and display sanitized values / error messages
+      res.render("genre_form", {
+        title: "Create Genre",
+        genre: genre,
+        errors: errors.array(),
+      });
+      return;
+    } else {
+      // data from form is valid
+      // check if genre with same name already exists
+      Genre.findOne({ name: req.body.name }).exec(function (err, found_genre) {
+        if (err) {
+          return next(err);
+        }
+        if (found_genre) {
+          // genre exists, redirect to its detail page
+          res.redirect(found_genre.url);
+        } else {
+          genre.save(function (err) {
+            if (err) {
+              return next(err);
+            }
+            // genre saved - redirect to genre detail page
+            res.redirect(genre.url);
+          });
+        }
+      });
+    }
+  },
+];
 
 // display genre delete form on GET
 
