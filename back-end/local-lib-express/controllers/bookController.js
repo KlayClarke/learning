@@ -198,14 +198,70 @@ exports.book_create_post = [
 
 // display book delete form on GET
 
-exports.book_delete_get = function (req, res) {
-  res.send("NOT IMPLEMENTED: Book delete GET");
+exports.book_delete_get = function (req, res, next) {
+  async.parallel(
+    {
+      // find book and bookinstances
+      book: function (callback) {
+        Book.findById(req.params.id).exec(callback);
+      },
+      bookinstances: function (callback) {
+        BookInstance.find({ book: req.params.id }).exec(callback);
+      },
+    },
+    function (err, results) {
+      if (err) {
+        return next(err);
+      }
+      if (results.book == null) {
+        // no results
+        res.redirect("/catalog/books");
+      }
+      // successful so render
+      res.render("book_delete", {
+        title: "Delete Book",
+        book: results.book,
+        bookinstances: results.bookinstances,
+      });
+    }
+  );
 };
 
 // handle book delete on POST
 
-exports.book_delete_post = function (req, res) {
-  res.send("NOT IMPLEMENTED: Book delete POST");
+exports.book_delete_post = function (req, res, next) {
+  async.parallel(
+    {
+      book: function (callback) {
+        Book.findById(req.body.bookid).exec(callback);
+      },
+      bookinstances: function (callback) {
+        BookInstance.find({ book: req.params.bookid }).exec(callback);
+      },
+    },
+    function (err, results) {
+      if (err) return next(err);
+      // success
+      if (results.bookinstances.length > 0) {
+        // book has bookinstances - render
+        res.render("book_delete", {
+          title: "Delete Book",
+          book: results.book,
+          bookinstances: results.bookinstances,
+        });
+        return;
+      } else {
+        // book has no bookinstances - delete object and redirect user to list of books
+        Book.findByIdAndRemove(req.body.bookid, function deleteBook(err) {
+          if (err) {
+            return next(err);
+          }
+          // success - go to books list
+          res.redirect("/catalog/books");
+        });
+      }
+    }
+  );
 };
 
 // display book update form on GET
