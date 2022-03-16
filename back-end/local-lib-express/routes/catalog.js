@@ -94,7 +94,7 @@ router.get("/genres", genre_controller.genre_list);
 // GET request for creating a bookinstance
 router.get(
   "/bookinstance/create",
-  book_instance_controller.bookinstace_create_get
+  book_instance_controller.bookinstance_create_get
 );
 
 // POST request for creating a bookinstance

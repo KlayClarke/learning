@@ -2,7 +2,6 @@ extends layout
 
 block content 
   h1 Title: #{book.title}
-
   p #[strong Author:]
     a(href=book.author.url)  #{book.author.name}
   p #[strong Summary:]  #{book.summary}
@@ -12,7 +11,6 @@ block content
       a(href=val.url)  #{val.name}
         if index < book.genre.length - 1
           |, 
-
   .book-instances-container 
     each val in book_instances 
       br
@@ -30,7 +28,7 @@ block content
     else 
       p There are no copies of this book in the library
   hr
-  p
-    a(href=book.url+'/delete') Delete Book 
   p 
     a(href=book.url+'/update') Update Book   
+  p
+    a(href=book.url+'/delete') Delete Book 

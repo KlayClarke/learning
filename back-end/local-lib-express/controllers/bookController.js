@@ -360,13 +360,19 @@ exports.book_update_post = [
       summary: req.body.summary,
       isbn: req.body.isbn,
       genre: typeof req.body.genre === "undefined" ? [] : req.body.genre,
-      _id: req.params.id, // THIS IS REQUIRED OR ELSE A NEW ID WOULD BE ASSIGNED TO UPDATED BOOK OBJECT
+      _id: req.params.id, // THIS IS REQUIRED; OTHERWISE A NEW ID WOULD BE ASSIGNED TO UPDATED BOOK OBJECT
     });
     if (!errors.isEmpty()) {
       // there are errors - render form again with sanitized values and error messages
       // get all authors and genres for form
       async.parallel(
         {
+          book: function (callback) {
+            Book.findById(req.params.id)
+              .populate("author")
+              .populate("genre")
+              .exec(callback);
+          },
           authors: function (callback) {
             Author.find(callback);
           },
@@ -387,7 +393,7 @@ exports.book_update_post = [
             title: "Update Book",
             authors: results.authors,
             genres: results.genres,
-            book: book,
+            book: results.book,
             errors: errors.array(),
           });
         }
