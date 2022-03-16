@@ -2,7 +2,6 @@ extends layout
 
 block content
   h1= title 
-
   - bookinstance_list.sort(function(a,b) {let bookinstanceA = a.book.title.toUpperCase(); let bookinstanceB = b.book.title.toUpperCase(); return (bookinstanceA < bookinstanceB) ? -1 : (bookinstanceA > bookinstanceB) ? 1 : 0})
   ul 
     each val in bookinstance_list 
@@ -16,6 +15,5 @@ block content
         a(href=val.url) #{val.book.title} : #{val.imprint} 
         if val.status!='Available'
           span (Due: #{val.due_back_formatted} )
-    
     else 
       li There are no book copies in this library 

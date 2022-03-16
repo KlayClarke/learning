@@ -1,5 +1,8 @@
 let mongoose = require("mongoose");
-const { DateTime } = require("luxon");
+const { DateTime, Settings } = require("luxon");
+
+// configure the time zone
+Settings.defaultZone = "America/New_York";
 
 let Schema = mongoose.Schema;
 
@@ -39,7 +42,7 @@ AuthorSchema.virtual("url").get(function () {
   return `/catalog/author/${this._id}`;
 });
 
-// virtual for formatted date of birth and date of death
+// virtual for formatted date of birth and date of death - eg March 13 1976
 
 AuthorSchema.virtual("date_of_birth_formatted").get(function () {
   return this.date_of_birth
@@ -50,6 +53,20 @@ AuthorSchema.virtual("date_of_birth_formatted").get(function () {
 AuthorSchema.virtual("date_of_death_formatted").get(function () {
   return this.date_of_death
     ? DateTime.fromJSDate(this.date_of_death).toLocaleString(DateTime.DATE_MED)
+    : "";
+});
+
+// virtual for formatted date of birth and date of death - eg 1976-03-13
+
+AuthorSchema.virtual("date_of_birth_formatted_yyyy_mm_dd").get(function () {
+  return this.date_of_birth
+    ? this.date_of_birth.toISOString().split("T")[0]
+    : "";
+});
+
+AuthorSchema.virtual("date_of_death_formatted_yyyy_mm_dd").get(function () {
+  return this.date_of_death
+    ? this.date_of_death.toISOString().split("T")[0]
     : "";
 });
 

@@ -187,12 +187,105 @@ exports.author_delete_post = function (req, res, next) {
 
 // display author update form on GET
 
-exports.author_update_get = function (req, res) {
-  res.send("NOT IMPLEMENTED: Author update GET");
+exports.author_update_get = function (req, res, next) {
+  //  get author for form
+  async.parallel(
+    {
+      author: function (callback) {
+        Author.findById(req.params.id).exec(callback);
+      },
+    },
+    function (err, results) {
+      if (err) {
+        return next(err);
+      }
+      if (results.author == null) {
+        // no results
+        let err = new Error("Author not found");
+        err.status = 404;
+        return next(err);
+      }
+      // success
+      // render author form
+      res.render("author_form", {
+        title: "Update Author",
+        author: results.author,
+      });
+    }
+  );
 };
 
 // handle author update on POST
 
-exports.author_update_post = function (req, res) {
-  res.send("NOT IMPLEMENTED: Author update POST");
-};
+exports.author_update_post = [
+  // validate and sanitize fields
+  body("first_name")
+    .trim()
+    .isLength({ min: 1 })
+    .escape()
+    .withMessage("First name must be specified")
+    .isAlphanumeric()
+    .withMessage("First name has non-alphanumeric characters"),
+  body("family_name")
+    .trim()
+    .isLength({ min: 1 })
+    .escape()
+    .withMessage("Family name must be specified")
+    .isAlphanumeric()
+    .withMessage("Family name has non-alphanumeric characters"),
+  body("date_of_birth", "Invalid date of birth")
+    .optional({ checkFalsy: true })
+    .isISO8601()
+    .toDate(),
+  body("date_of_death", "Invalid date of death")
+    .optional({ checkFalsy: true })
+    .isISO8601()
+    .toDate(),
+
+  // process request after validation and sanitization
+  (req, res, next) => {
+    // extract validation errors from a request
+    const errors = validationResult(req);
+
+    // create an author object with escaped / trimmed data and old id
+    let author = new Author({
+      first_name: req.body.first_name,
+      family_name: req.body.family_name,
+      date_of_birth: req.body.date_of_birth,
+      date_of_death: req.body.date_of_death,
+      _id: req.params.id, // THIS IS REQUIRED; OTHERWISE A NEW ID WOULD BE ASSIGNED TO UPDATED AUTHOR OBJECT
+    });
+    if (!errors.isEmpty()) {
+      // there are errors - render form again with sanitized values and error messages
+      // get author, authors list for form
+      async.parallel(
+        {
+          author: function (callback) {
+            Author.findById(req.params.id).exec(callback);
+          },
+        },
+        function (err, results) {
+          if (err) return next(err);
+          // success - render form
+          res.render("author_form", {
+            title: "Update Author",
+            author: results.author,
+          });
+        }
+      );
+      return;
+    } else {
+      // data from form is valid - update the record
+      Author.findByIdAndUpdate(
+        req.params.id,
+        author,
+        {},
+        function (err, theauthor) {
+          if (err) return next(err);
+          // successful - redirect to author detail page
+          res.redirect(theauthor.url);
+        }
+      );
+    }
+  },
+];

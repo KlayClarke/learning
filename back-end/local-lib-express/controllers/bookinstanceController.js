@@ -244,7 +244,6 @@ exports.bookinstance_update_post = [
         function (err, results) {
           if (err) return next(err);
           // success - render form
-
           res.render("bookinstance_form", {
             title: "Update Book Instance",
             book: results.bookinstance.book,
