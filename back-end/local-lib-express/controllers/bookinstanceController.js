@@ -52,6 +52,7 @@ exports.bookinstance_create_get = function (req, res, next) {
     res.render("bookinstance_form", {
       title: "Create BookInstance",
       book_list: books,
+      status_list: ["Available", "Maintenance", "Loaned", "Reserved"],
     });
   });
 };

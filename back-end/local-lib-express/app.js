@@ -9,12 +9,14 @@ var logger = require("morgan");
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var catalogRouter = require("./routes/catalog");
+var compression = require("compression");
+var helmet = require("helmet");
 
 var app = express();
 
 // set up mongoose connection
 let mongoose = require("mongoose");
-let mongoDB = `mongodb+srv://${process.env.MONGODB_USERNAME}:${process.env.MONGODB_PASSWORD}@cluster0.eut59.mongodb.net/local_library?retryWrites=true&w=majority`;
+let mongoDB = process.env.MONGODB_URI;
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
 let db = mongoose.connection;
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
@@ -27,6 +29,8 @@ app.use(logger("dev"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(compression()); // compress all routes - for a high traffic website in production, you would user a reverse proxy like Nginx instead
+app.use(helmet());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.use("/", indexRouter);
