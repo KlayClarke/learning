@@ -14,6 +14,12 @@ let UserSchema = new Schema({
   },
 });
 
+// virtual for user url
+
+UserSchema.virtual("url").get(function () {
+  return `/users/${this._id}`;
+});
+
 // virtual for full name
 
 UserSchema.virtual("fullname").get(function () {

@@ -10,7 +10,11 @@ html
         a(href="/users/signup") Signup
         a(href="/users/login") Login  
       else 
-        a(href="/users/logout") Logout  
-    if currentUser 
-      h1 Welcome home, #{currentUser.fullname}
+        if currentUser.membership_status != 'Royalty'
+          a(href=currentUser.url+'/join') Join The Club 
+        a(href='/users/account') Account  
+        a(href=currentUser.url+'/logout') Logout  
+    if errors 
+      for error in errors 
+        p.error= error.msg
     block content

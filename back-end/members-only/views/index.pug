@@ -1,5 +1,13 @@
 extends layout
-
 block content
+  if currentUser 
+    h4 Welcome home, #{currentUser.fullname}
   p= title
-
+  if currentUser 
+    form(action='' method='POST')
+      label(for='title') Title 
+      input#title()
+      label(for='message') Message  
+      input#message()
+      button(type='submit') Submit 
+  

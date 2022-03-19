@@ -1,0 +1,6 @@
+extends layout 
+block content 
+  form(action=currentUser.url+'/join' method='POST')
+    label(for='Passcode') Passcode 
+    input#passcode(name='passcode' placeholder='000000' type='text')
+    button(type='submit') Submit 

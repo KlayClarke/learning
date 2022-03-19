@@ -40,11 +40,12 @@ router.post("/signup", [
     .isLength({ min: 1 })
     .escape()
     .withMessage("Password must be specified"),
-  body("membership_status")
-    .trim()
-    .isLength({ min: 1 })
-    .escape()
-    .withMessage("Membership status must be specified"),
+  body("passwordconfirmation").custom((value, { req }) => {
+    if (value !== req.body.password) {
+      throw new Error("Password confirmation does not match password");
+    }
+    return true; // indicate success of custom validator
+  }),
   (req, res, next) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -79,11 +80,59 @@ router.post(
   "/login",
   passport.authenticate("local", {
     successRedirect: "/",
-    failureRedirect: "/",
+    failureRedirect: "/users/login",
   })
 );
 
-router.get("/logout", function (req, res) {
+router.get("/account", function (req, res) {
+  res.render("user_detail");
+});
+
+router.get("/:id/join", function (req, res) {
+  res.render("join_form");
+});
+
+router.post("/:id/join", [
+  body("passcode", "Passcode field cannot be empty").trim().escape(),
+  (req, res, next) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      res.render("join_form", { errors: errors.array() });
+      return;
+    } else {
+      async.parallel(
+        {
+          user: function (callback) {
+            User.findById(req.params.id).exec(callback);
+          },
+        },
+        function (err, results) {
+          if (err) return next(err);
+          let user = new User({
+            firstname: results.user.firstname,
+            lastname: results.user.lastname,
+            username: results.user.username,
+            password: results.user.password,
+            membership_status: "Royalty",
+            _id: req.params.id,
+          });
+          // update the user membership status
+          User.findByIdAndUpdate(
+            req.params.id,
+            user,
+            {},
+            function (err, theuser) {
+              if (err) return next(err);
+              res.redirect("/users/account");
+            }
+          );
+        }
+      );
+    }
+  },
+]);
+
+router.get("/:id/logout", function (req, res) {
   req.logout();
   res.redirect("/");
 });

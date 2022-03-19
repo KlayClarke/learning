@@ -1,6 +1,5 @@
 extends layout 
 block content   
-  h1 Please Signup 
   form(action='/users/signup' method='POST')
     label(for='firstname') First Name 
     input#firstname(name='firstname' placeholder='john' type='text')
@@ -10,8 +9,6 @@ block content
     input#username(name='username' placeholder='username' type='text')
     label(for='password') Password 
     input#password(name='password' placeholder='password' type='password')
-    label(for='membership_status') Membership Status
-    select#membership_status(type='select' name="membership_status" placeholder='Select Membership Status' required='true') 
-      option(value='Commoner') Commoner 
-      option(value='Royalty') Royalty 
+    label(for='passwordconfirmation') Confirm Password 
+    input#passwordconfirmation(name='passwordconfirmation' placeholder='password' type='password')
     button(type='submit') Signup

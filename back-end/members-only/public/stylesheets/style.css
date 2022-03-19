@@ -9,9 +9,14 @@ nav a {
 
 a {
   color: #0066ff;
+  text-decoration: none;
 }
 
 li {
   margin-bottom: 15px;
   list-style-type: none;
+}
+
+.error {
+  color: red;
 }
