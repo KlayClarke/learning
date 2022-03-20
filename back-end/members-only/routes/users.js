@@ -1,4 +1,3 @@
-const { application } = require("express");
 var express = require("express");
 var router = express.Router();
 var passport = require("passport");
@@ -88,6 +87,57 @@ router.get("/account", function (req, res) {
   res.render("user_detail");
 });
 
+router.get("/admin", function (req, res) {
+  res.render("admin_form");
+});
+
+router.post("/admin", [
+  body("admincode", "Admincode field cannot be empty").trim().escape(),
+  (req, res, next) => {
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      res.render("admin_form", { errors: errors.array() });
+      return;
+    } else {
+      async.parallel(
+        {
+          user: function (callback) {
+            User.findById(res.locals.currentUser._id).exec(callback);
+          },
+        },
+        function (err, results) {
+          if (err) return next(err);
+          if (req.body.admincode != process.env.ADMINCODE) {
+            // render form again
+            res.render("admin_form", {
+              errors: [{ msg: "Incorrect credential" }],
+            });
+            return;
+          }
+          let user = new User({
+            firstname: results.user.firstname,
+            lastname: results.user.lastname,
+            username: results.user.username,
+            password: results.user.password,
+            membership_status: results.user.membership_status,
+            admin: true,
+            _id: results.user._id,
+          });
+          User.findByIdAndUpdate(
+            res.locals.currentUser._id,
+            user,
+            {},
+            function (err, theuser) {
+              if (err) return next(err);
+              res.redirect("/");
+            }
+          );
+        }
+      );
+    }
+  },
+]);
+
 router.get("/:id/join", function (req, res) {
   res.render("join_form");
 });
@@ -108,6 +158,13 @@ router.post("/:id/join", [
         },
         function (err, results) {
           if (err) return next(err);
+          if (req.body.passcode != process.env.PASSCODE) {
+            // render form again
+            res.render("join_form", {
+              errors: [{ msg: "Incorrect credential" }],
+            });
+            return;
+          }
           let user = new User({
             firstname: results.user.firstname,
             lastname: results.user.lastname,

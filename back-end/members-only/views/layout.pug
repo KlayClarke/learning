@@ -12,9 +12,12 @@ html
       else 
         if currentUser.membership_status != 'Royalty'
           a(href=currentUser.url+'/join') Join The Club 
+        if currentUser.admin != true 
+          a(href="/users/admin") Admin 
         a(href='/users/account') Account  
         a(href=currentUser.url+'/logout') Logout  
     if errors 
       for error in errors 
         p.error= error.msg
     block content
+      

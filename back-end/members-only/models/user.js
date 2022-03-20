@@ -12,6 +12,7 @@ let UserSchema = new Schema({
     enum: ["Commoner", "Royalty"],
     default: "Commoner",
   },
+  admin: { type: Boolean, required: true, default: false },
 });
 
 // virtual for user url

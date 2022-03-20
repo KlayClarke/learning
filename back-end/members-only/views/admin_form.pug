@@ -1,0 +1,6 @@
+extends layout 
+block content   
+  form(action='' method='POST')
+    label(for='admincode') AdminCode 
+    input#admincode(type='password' placeholder='admincode' name='admincode' required='true')
+    button(type='submit') Authenticate

@@ -6,8 +6,21 @@ block content
   if currentUser 
     form(action='' method='POST')
       label(for='title') Title 
-      input#title()
-      label(for='message') Message  
-      input#message()
+      br
+      input#title(type='text' placeholder='title' name='title' required='true')
+      br
+      label(for='message') Message
+      br
+      textarea#message(type='textarea' placeholder='message' name='message' required='true' cols='30' row='5')
+      br
       button(type='submit') Submit 
-  
+  if message_list.length 
+    main 
+      .messages-container 
+        for message in message_list
+          .message-container
+            button(type='button' class=(undefined==currentUser ? '' : 'message-container-button')) 
+              p.underline #[strong #{message.title}] #{currentUser && message.author ? `by ${message.author.fullname}` : currentUser && message.author==null ? 'by [Deleted User]' : '' } #{currentUser ? message.timestamp_formatted : ''}
+              p.message-body #{message.message} 
+              if currentUser && currentUser.admin==true 
+                a.delete(href=`/messages/${message._id}/delete`) Delete 
