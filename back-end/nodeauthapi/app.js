@@ -1,5 +1,4 @@
 const express = require("express");
-const { type } = require("express/lib/response");
 const jwt = require("jsonwebtoken");
 
 const app = express();
