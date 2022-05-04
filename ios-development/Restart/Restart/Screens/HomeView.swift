@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeView: View {
 //	MARK: - PROPERTY
 	@AppStorage("onboarding") var isOnboardingViewActive: Bool = true
+	@State private var isAnimating: Bool = false
 //	MARK: - BODY
     var body: some View {
 		VStack(spacing: 20) {
@@ -20,7 +21,10 @@ struct HomeView: View {
 				Image("character-2")
 					.resizable()
 					.scaledToFit()
-				.padding()
+					.padding()
+					.offset(y: isAnimating ? 35 : -35)
+					.animation(Animation.easeInOut(duration: 4).repeatForever(), value: isAnimating)
+				// create animation that offsets circle group 35 points in either direction if isAnimation is true; this animation shall repeat forever
 			}
 			// MARK: - CENTER
 			Text("The time that leads to mastery is dependent on the intensity of our focus.")
@@ -32,11 +36,13 @@ struct HomeView: View {
 			// MARK: - FOOTER
 			Spacer() // adds space between elements (kinda like a margin)
 			Button(action: {
-				isOnboardingViewActive = true
+				withAnimation {
+					isOnboardingViewActive = true
+				}
+				// trigger transition animation on button click
 			}) {
 				Image(systemName: "arrow.triangle.2.circlepath.circle.fill")
 					.imageScale(.large)
-				
 				Text("Restart")
 					.font(.system(.title3, design: .rounded))
 					.fontWeight(.bold)
@@ -45,6 +51,12 @@ struct HomeView: View {
 			.buttonBorderShape(.capsule)
 			.controlSize(.large)
 		} //: VSTACK
+		.onAppear(perform: {
+			DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+				isAnimating = true
+			}) // telling program to run code inside this closure 3 seconds from now -- sort of like a timeout
+			// trigger animation when contents in vstack were to appear on screen
+		})
     }
 }
 // MARK: - PREVIEW
