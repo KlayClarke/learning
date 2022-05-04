@@ -1,0 +1,18 @@
+{
+  "name": "db-testing-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "mongoConfig.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mongodb-memory-server": "^8.4.1"
+  },
+  "dependencies": {
+    "mongoose": "^6.2.8"
+  }
+}
