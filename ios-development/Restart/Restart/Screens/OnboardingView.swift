@@ -16,6 +16,8 @@ struct OnboardingView: View {
 	@State private var imageOffset: CGSize = .zero
 	@State private var indicatorOpacity: Double = 1.0
 	@State private var textTitle: String = "Share."
+	
+	let hapticFeedback = UINotificationFeedbackGenerator()
 	// MARK: - BODY
     var body: some View {
 		ZStack {
@@ -87,7 +89,7 @@ struct OnboardingView: View {
 				Image(systemName: "arrow.left.and.right.circle") // add arrow image to center
 					.font(.system(size: 60, weight: .ultraLight))
 					.foregroundColor(.white)
-					.offset(y: 20) // bring item down a little
+					.offset(y: 30) // bring item down a little
 					.opacity(isAnimating ? 1 : 0)
 					.animation(.easeOut(duration: 1).delay(2), value: isAnimating) // delay render until 2 second after screen load
 					.opacity(indicatorOpacity)
@@ -133,8 +135,8 @@ struct OnboardingView: View {
 						.gesture(
 							DragGesture()
 								.onChanged { gesture in
-									if gesture.translation.width > 0 && buttonOffset <= buttonWidth - 80 { // attempt to ensure that button is never dragged out of container
-										buttonOffset = gesture.translation.width
+									if gesture.translation.width > 0 && buttonOffset <= buttonWidth - 80 {
+										buttonOffset = gesture.translation.width // attempt to ensure that button is never dragged out of container
 									}
 								}
 								.onEnded { _ in
@@ -142,9 +144,13 @@ struct OnboardingView: View {
 										// run animation when drag ends
 										if buttonOffset > buttonWidth/2 { // if user drags circle more than half the width of the container under button, snap circle to right of container and activate home view
 											buttonOffset = buttonWidth - 80
+											hapticFeedback.notificationOccurred(.success) // haptic feedback to indicate successfully drag
+											playSound(sound: "chimeup", type: "mp3") // play chimeup sound on button drag
 											isOnboardingViewActive = false
 										} else {
 											buttonOffset = 0
+											hapticFeedback.notificationOccurred(.warning
+											) // haptic feedback to indicate failed drag / as warning (only use .error for errors)
 										}
 									}
 								}
@@ -163,6 +169,7 @@ struct OnboardingView: View {
 		.onAppear(perform: {
 			isAnimating = true // switch animation variable value from false to true when enter content initially renders
 		})
+		.preferredColorScheme(.dark) // tell app that we want this particular view to adhere to the dark color scheme (light pullbar text colors)
 	}
 }
 // MARK: - PREVIEW

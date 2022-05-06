@@ -37,6 +37,7 @@ struct HomeView: View {
 			Spacer() // adds space between elements (kinda like a margin)
 			Button(action: {
 				withAnimation {
+					playSound(sound: "success", type: "m4a") // play success audio file on restart button click
 					isOnboardingViewActive = true
 				}
 				// trigger transition animation on button click
