@@ -13,6 +13,9 @@ struct OnboardingView: View {
 	@State private var buttonWidth: Double = UIScreen.main.bounds.width - 80 // make button width actual screen width minus 80 (pixels ??)
 	@State private var buttonOffset: CGFloat = 0 // initialize button offset as 0 -- change that whilst in app
 	@State private var isAnimating: Bool = false // initialize isAnimating variable as false -- I can change it to true under certain cases
+	@State private var imageOffset: CGSize = .zero
+	@State private var indicatorOpacity: Double = 1.0
+	@State private var textTitle: String = "Share."
 	// MARK: - BODY
     var body: some View {
 		ZStack {
@@ -22,10 +25,12 @@ struct OnboardingView: View {
 				// MARK: - HEADER
 				Spacer()
 				VStack(spacing: 0) {
-					Text("Share.")
+					Text(textTitle)
 						.font(.system(size: 60))
 						.fontWeight(.heavy)
 						.foregroundColor(.white)
+						.transition(.opacity)
+						.id(textTitle) // to trigger transitions on textTitle change
 					Text("""
 					It is not how much we give but
 					how much love we put into giving
@@ -45,13 +50,49 @@ struct OnboardingView: View {
 				// MARK: - CENTER
 				ZStack { // zstack allows its children to be arranged atop each other
 					CircleGroupView(ShapeColor: .white, ShapeOpacity: 0.2) // use component
+						.offset(x: imageOffset.width * -1)
+						.blur(radius: abs(imageOffset.width / 5))
+						.animation(.easeOut(duration: 1), value: imageOffset)
+						// more circle group in opposite direction of image
+						// otherwise known as a paralax effect
 					Image("character-1")
 						.resizable()
 						.scaledToFit()
 						.opacity(isAnimating ? 1 : 0)
 						.animation(.easeOut(duration: 0.5), value: isAnimating)
-					// image fade in (opacity) animation that takes 2 seconds to complete
+						.offset(x: imageOffset.width * 1.2, y: 0)
+						.rotationEffect(.degrees(Double(imageOffset.width / 20)))
+						.gesture(DragGesture()
+							.onChanged( { gesture in
+								if abs(imageOffset.width) <= 150 { // abs returns absolue value of given number
+									imageOffset = gesture.translation
+									withAnimation(.linear(duration: 0.25)) {
+										indicatorOpacity = 0
+										textTitle = "Give."
+									} // to hide indicator symbol/image on gesture
+								}
+							})
+								.onEnded { _ in
+									imageOffset = .zero
+									withAnimation(.linear(duration: 0.25)) {
+										indicatorOpacity = 1
+										textTitle = "Share."
+									} // to show indicator after gesture complete
+								} // to reset image position on gesture end
+						) //: GESTURE
+						.animation(.easeOut(duration: 1), value: imageOffset)
+					// image eases back to initial point taking 2 seconds to do so
 				} //: CENTER
+				.overlay(
+				Image(systemName: "arrow.left.and.right.circle") // add arrow image to center
+					.font(.system(size: 60, weight: .ultraLight))
+					.foregroundColor(.white)
+					.offset(y: 20) // bring item down a little
+					.opacity(isAnimating ? 1 : 0)
+					.animation(.easeOut(duration: 1).delay(2), value: isAnimating) // delay render until 2 second after screen load
+					.opacity(indicatorOpacity)
+				, alignment: .bottom
+				)
 				Spacer()
 				// MARK: - FOOTER
 				ZStack {
