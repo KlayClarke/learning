@@ -26,6 +26,7 @@ struct ContentView: View {
 			// MARK: - BODY
 			NavigationView {
 				ZStack {
+					Color.clear // somehow forces the z stack to use the entire screen height
 					// MARK: - PAGE IMAGE
 					Image("magazine-front-cover")
 						.resizable()
@@ -71,6 +72,13 @@ struct ContentView: View {
 						isAnimating = true
 					}
 				})
+				// MARK: - INFO PANEL
+				.overlay(
+					_InfoPanelView(scale: imageScale, offset: imageOffset) // add info panel bar to this page
+						.padding(.horizontal)
+						.padding(.top, 30)
+					, alignment: .top // align it to the top of the z stack
+				)
 			} //: NAVIGATION
 			.navigationViewStyle(.stack)
     }
