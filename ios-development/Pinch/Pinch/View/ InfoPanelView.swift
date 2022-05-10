@@ -39,7 +39,7 @@ struct _InfoPanelView: View {
 				} //: HSTACK
 				.font(.footnote)
 				.padding(8)
-				.background(.ultraThinMaterial)
+				.background(.ultraThinMaterial) // put opaque background thing
 				.cornerRadius(8)
 				.frame(maxWidth: 420)
 				.opacity(isInfoPanelVisible ? 1 : 0) // if variable is true, show info panel.. else, don't

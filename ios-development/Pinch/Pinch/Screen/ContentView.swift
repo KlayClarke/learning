@@ -79,6 +79,53 @@ struct ContentView: View {
 						.padding(.top, 30)
 					, alignment: .top // align it to the top of the z stack
 				)
+				
+				// MARK: - CONTROLS
+				.overlay(
+					Group { // create group container at bottom of screen
+						HStack {
+							// SCALE DOWN
+							Button {
+								withAnimation(.spring()) {
+									if imageScale > 1 {
+										imageScale -= 1 // decrease image size on click
+										if imageScale <= 1 {
+											resetImageState() // safety precaution to prevent unwanted glitches
+										}
+									}
+								}
+ 							} label: {
+								ControlImageView(icon: "minus.magnifyingglass")
+							} // add "zoom out button"
+							// RESET
+							Button {
+								resetImageState() // reset image state on btuton click
+							} label: {
+								ControlImageView(icon: "arrow.up.left.and.down.right.magnifyingglass")
+							}
+							// SCALE UP
+							Button {
+								withAnimation(.spring()) {
+									if imageScale < 5 {
+										imageScale += 1
+										if imageScale > 5 { // to make sure image never passes 5
+											resetImageState()
+										}
+									}
+								}
+							} label: {
+								ControlImageView(icon: "plus.magnifyingglass")
+							}
+						} //: CONTROLS
+						.padding(EdgeInsets(top: 12, leading: 20, bottom: 12, trailing: 20))
+						.background(.ultraThinMaterial)
+						.cornerRadius(12)
+						.opacity(isAnimating ? 1 : 0) // add animation
+
+					}
+						.padding(.bottom, 30)
+					, alignment: .bottom
+				)
 			} //: NAVIGATION
 			.navigationViewStyle(.stack)
     }

@@ -12,6 +12,7 @@
 		5300240628256E8C00A2D563 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5300240528256E8C00A2D563 /* Assets.xcassets */; };
 		5300240928256E8C00A2D563 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5300240828256E8C00A2D563 /* Preview Assets.xcassets */; };
 		5335BEDF282AB5D400AB7C3D /*  InfoPanelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5335BEDE282AB5D400AB7C3D /*  InfoPanelView.swift */; };
+		5335BEE1282B044500AB7C3D /* ControlImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5335BEE0282B044500AB7C3D /* ControlImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		5300240528256E8C00A2D563 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5300240828256E8C00A2D563 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		5335BEDE282AB5D400AB7C3D /*  InfoPanelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " InfoPanelView.swift"; sourceTree = "<group>"; };
+		5335BEE0282B044500AB7C3D /* ControlImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControlImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 			isa = PBXGroup;
 			children = (
 				5335BEDE282AB5D400AB7C3D /*  InfoPanelView.swift */,
+				5335BEE0282B044500AB7C3D /* ControlImageView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -172,6 +175,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5335BEE1282B044500AB7C3D /* ControlImageView.swift in Sources */,
 				5335BEDF282AB5D400AB7C3D /*  InfoPanelView.swift in Sources */,
 				5300240428256E8A00A2D563 /* ContentView.swift in Sources */,
 				5300240228256E8A00A2D563 /* PinchApp.swift in Sources */,
