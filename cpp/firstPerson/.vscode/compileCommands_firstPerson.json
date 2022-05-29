@@ -1,0 +1,57 @@
+[
+	{
+		"file": "/Users/klayclarke/Desktop/Development/learning/cpp/firstPerson/Source/firstPerson/firstPerson.Build.cs",
+		"command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ @\"/Users/klayclarke/Desktop/Development/learning/cpp/firstPerson/.vscode/compileCommands_firstPerson/firstPerson.191.rsp\"",
+		"directory": "/Users/Shared/Epic Games/UE_4.27/Engine/Source"
+	},
+	{
+		"file": "/Users/klayclarke/Desktop/Development/learning/cpp/firstPerson/Source/firstPerson/firstPerson.cpp",
+		"command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ @\"/Users/klayclarke/Desktop/Development/learning/cpp/firstPerson/.vscode/compileCommands_firstPerson/firstPerson.191.rsp\"",
+		"directory": "/Users/Shared/Epic Games/UE_4.27/Engine/Source"
+	},
+	{
+		"file": "/Users/klayclarke/Desktop/Development/learning/cpp/firstPerson/Source/firstPerson/firstPerson.h",
+		"command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ @\"/Users/klayclarke/Desktop/Development/learning/cpp/firstPerson/.vscode/compileCommands_firstPerson/firstPerson.191.rsp\"",
+		"directory": "/Users/Shared/Epic Games/UE_4.27/Engine/Source"
+	},
+	{
+		"file": "/Users/klayclarke/Desktop/Development/learning/cpp/firstPerson/Source/firstPerson/firstPersonCharacter.cpp",
+		"command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ @\"/Users/klayclarke/Desktop/Development/learning/cpp/firstPerson/.vscode/compileCommands_firstPerson/firstPerson.191.rsp\"",
+		"directory": "/Users/Shared/Epic Games/UE_4.27/Engine/Source"
+	},
+	{
+		"file": "/Users/klayclarke/Desktop/Development/learning/cpp/firstPerson/Source/firstPerson/firstPersonCharacter.h",
+		"command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ @\"/Users/klayclarke/Desktop/Development/learning/cpp/firstPerson/.vscode/compileCommands_firstPerson/firstPerson.191.rsp\"",
+		"directory": "/Users/Shared/Epic Games/UE_4.27/Engine/Source"
+	},
+	{
+		"file": "/Users/klayclarke/Desktop/Development/learning/cpp/firstPerson/Source/firstPerson/firstPersonGameMode.cpp",
+		"command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ @\"/Users/klayclarke/Desktop/Development/learning/cpp/firstPerson/.vscode/compileCommands_firstPerson/firstPerson.191.rsp\"",
+		"directory": "/Users/Shared/Epic Games/UE_4.27/Engine/Source"
+	},
+	{
+		"file": "/Users/klayclarke/Desktop/Development/learning/cpp/firstPerson/Source/firstPerson/firstPersonGameMode.h",
+		"command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ @\"/Users/klayclarke/Desktop/Development/learning/cpp/firstPerson/.vscode/compileCommands_firstPerson/firstPerson.191.rsp\"",
+		"directory": "/Users/Shared/Epic Games/UE_4.27/Engine/Source"
+	},
+	{
+		"file": "/Users/klayclarke/Desktop/Development/learning/cpp/firstPerson/Source/firstPerson/firstPersonHUD.cpp",
+		"command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ @\"/Users/klayclarke/Desktop/Development/learning/cpp/firstPerson/.vscode/compileCommands_firstPerson/firstPerson.191.rsp\"",
+		"directory": "/Users/Shared/Epic Games/UE_4.27/Engine/Source"
+	},
+	{
+		"file": "/Users/klayclarke/Desktop/Development/learning/cpp/firstPerson/Source/firstPerson/firstPersonHUD.h",
+		"command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ @\"/Users/klayclarke/Desktop/Development/learning/cpp/firstPerson/.vscode/compileCommands_firstPerson/firstPerson.191.rsp\"",
+		"directory": "/Users/Shared/Epic Games/UE_4.27/Engine/Source"
+	},
+	{
+		"file": "/Users/klayclarke/Desktop/Development/learning/cpp/firstPerson/Source/firstPerson/firstPersonProjectile.cpp",
+		"command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ @\"/Users/klayclarke/Desktop/Development/learning/cpp/firstPerson/.vscode/compileCommands_firstPerson/firstPerson.191.rsp\"",
+		"directory": "/Users/Shared/Epic Games/UE_4.27/Engine/Source"
+	},
+	{
+		"file": "/Users/klayclarke/Desktop/Development/learning/cpp/firstPerson/Source/firstPerson/firstPersonProjectile.h",
+		"command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/clang++ @\"/Users/klayclarke/Desktop/Development/learning/cpp/firstPerson/.vscode/compileCommands_firstPerson/firstPerson.191.rsp\"",
+		"directory": "/Users/Shared/Epic Games/UE_4.27/Engine/Source"
+	}
+]

@@ -18,6 +18,16 @@
 //	float price;
 //}; // must have semi colon at end
 //
+//struct Person {
+//	std::string name;
+//	int age;
+//	Smartphone smartphone;
+//};
+//
+//void printSmartphoneInfo(Smartphone smartphone);
+//void printPersonInfo(Person person);
+//void printListOfPhones()
+//
 //int main()
 //{
 ////	std::string name = "iPhone 12";
@@ -42,5 +52,26 @@
 //	smartphone2.color = "gray";
 //	smartphone2.price = 888.88;
 //	
+//	printSmartphoneInfo(smartphone);
+//	printSmartphoneInfo(smartphone2);
+//	
+//	Person p;
+//	p.name = "Klay";
+//	p.age = 23;
+//	p.smartphone = smartphone;
+//	
+//	printPersonInfo(p);
+//	
+//	
+//}
+//
+//void printSmartphoneInfo(Smartphone smartphone) {
 //	std::cout << "name: " << smartphone.name << std::endl; // string concatenation
+//}
+//
+//void printPersonInfo(Person person) {
+//	std::cout << "name: " << person.name << std::endl;
+//	std::cout << "smartphone: ";
+//	
+//	printSmartphoneInfo(person.smartphone);
 //}

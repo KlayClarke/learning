@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"/Users/klayclarke/Desktop/Development/learning/cpp/MyProject/Source/MyProject/MyProject.Build.cs",
+		"/Users/klayclarke/Desktop/Development/learning/cpp/MyProject/Source/MyProject.Target.cs",
+		"/Users/klayclarke/Desktop/Development/learning/cpp/MyProject/Source/MyProjectEditor.Target.cs"
+	],
+	"EngineVersion": "4.27.2"
+}

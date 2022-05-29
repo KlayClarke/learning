@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		533516252843BA100067FCC5 /* QuizAppCodeTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 533516242843BA100067FCC5 /* QuizAppCodeTest.cpp */; };
+		533516272843BDA50067FCC5 /* Arrays.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 533516262843BDA50067FCC5 /* Arrays.cpp */; };
+		533516292843CDF30067FCC5 /* Arrays2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 533516282843CDF30067FCC5 /* Arrays2.cpp */; };
 		537F17592842F8CE00B57095 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 537F17582842F8CE00B57095 /* main.cpp */; };
 		537F17622843003100B57095 /* myfirst.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 537F17612843003100B57095 /* myfirst.cpp */; };
 		537F17642843028700B57095 /* NamespacesCpp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 537F17632843028700B57095 /* NamespacesCpp.cpp */; };
@@ -33,6 +36,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		533516242843BA100067FCC5 /* QuizAppCodeTest.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = QuizAppCodeTest.cpp; sourceTree = "<group>"; };
+		533516262843BDA50067FCC5 /* Arrays.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Arrays.cpp; sourceTree = "<group>"; };
+		533516282843CDF30067FCC5 /* Arrays2.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Arrays2.cpp; sourceTree = "<group>"; };
 		537F17552842F8CE00B57095 /* HelloWorld */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HelloWorld; sourceTree = BUILT_PRODUCTS_DIR; };
 		537F17582842F8CE00B57095 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		537F17612843003100B57095 /* myfirst.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = myfirst.cpp; sourceTree = "<group>"; };
@@ -88,6 +94,9 @@
 				537F176D28431BCF00B57095 /* Factorial.cpp */,
 				537F176F2843230100B57095 /* TernaryOperator.cpp */,
 				537F17712843274F00B57095 /* LinkedListsDS.cpp */,
+				533516262843BDA50067FCC5 /* Arrays.cpp */,
+				533516282843CDF30067FCC5 /* Arrays2.cpp */,
+				533516242843BA100067FCC5 /* QuizAppCodeTest.cpp */,
 			);
 			path = HelloWorld;
 			sourceTree = "<group>";
@@ -154,11 +163,14 @@
 				537F17622843003100B57095 /* myfirst.cpp in Sources */,
 				537F17682843099500B57095 /* Structures.cpp in Sources */,
 				537F176E28431BCF00B57095 /* Factorial.cpp in Sources */,
+				533516252843BA100067FCC5 /* QuizAppCodeTest.cpp in Sources */,
 				537F176A2843118F00B57095 /* Functions.cpp in Sources */,
 				537F177428432BAC00B57095 /* Classes.cpp in Sources */,
+				533516292843CDF30067FCC5 /* Arrays2.cpp in Sources */,
 				537F17702843230100B57095 /* TernaryOperator.cpp in Sources */,
 				537F17592842F8CE00B57095 /* main.cpp in Sources */,
 				537F176C2843160000B57095 /* FunctionsWParams.cpp in Sources */,
+				533516272843BDA50067FCC5 /* Arrays.cpp in Sources */,
 				537F17662843067C00B57095 /* SystemPause.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

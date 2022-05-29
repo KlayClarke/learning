@@ -1,0 +1,8 @@
+{
+	"SourceFiles": [
+		"/Users/klayclarke/Desktop/Development/learning/cpp/firstPerson/Source/firstPerson/firstPerson.Build.cs",
+		"/Users/klayclarke/Desktop/Development/learning/cpp/firstPerson/Source/firstPerson.Target.cs",
+		"/Users/klayclarke/Desktop/Development/learning/cpp/firstPerson/Source/firstPersonEditor.Target.cs"
+	],
+	"EngineVersion": "4.27.2"
+}

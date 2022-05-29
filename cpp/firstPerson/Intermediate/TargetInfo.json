@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "firstPerson",
+			"Path": "/Users/klayclarke/Desktop/Development/learning/cpp/firstPerson/Source/firstPerson.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "firstPersonEditor",
+			"Path": "/Users/klayclarke/Desktop/Development/learning/cpp/firstPerson/Source/firstPersonEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}
