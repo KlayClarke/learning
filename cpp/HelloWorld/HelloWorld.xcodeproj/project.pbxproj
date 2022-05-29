@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		537F17592842F8CE00B57095 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 537F17582842F8CE00B57095 /* main.cpp */; };
+		537F17622843003100B57095 /* myfirst.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 537F17612843003100B57095 /* myfirst.cpp */; };
+		537F17642843028700B57095 /* NamespacesCpp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 537F17632843028700B57095 /* NamespacesCpp.cpp */; };
+		537F17662843067C00B57095 /* SystemPause.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 537F17652843067C00B57095 /* SystemPause.cpp */; };
+		537F17682843099500B57095 /* Structures.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 537F17672843099500B57095 /* Structures.cpp */; };
+		537F176A2843118F00B57095 /* Functions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 537F17692843118F00B57095 /* Functions.cpp */; };
+		537F176C2843160000B57095 /* FunctionsWParams.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 537F176B2843160000B57095 /* FunctionsWParams.cpp */; };
+		537F176E28431BCF00B57095 /* Factorial.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 537F176D28431BCF00B57095 /* Factorial.cpp */; };
+		537F17702843230100B57095 /* TernaryOperator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 537F176F2843230100B57095 /* TernaryOperator.cpp */; };
+		537F17722843274F00B57095 /* LinkedListsDS.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 537F17712843274F00B57095 /* LinkedListsDS.cpp */; };
+		537F177428432BAC00B57095 /* Classes.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 537F177328432BAC00B57095 /* Classes.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +35,16 @@
 /* Begin PBXFileReference section */
 		537F17552842F8CE00B57095 /* HelloWorld */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HelloWorld; sourceTree = BUILT_PRODUCTS_DIR; };
 		537F17582842F8CE00B57095 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		537F17612843003100B57095 /* myfirst.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = myfirst.cpp; sourceTree = "<group>"; };
+		537F17632843028700B57095 /* NamespacesCpp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = NamespacesCpp.cpp; sourceTree = "<group>"; };
+		537F17652843067C00B57095 /* SystemPause.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SystemPause.cpp; sourceTree = "<group>"; };
+		537F17672843099500B57095 /* Structures.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Structures.cpp; sourceTree = "<group>"; };
+		537F17692843118F00B57095 /* Functions.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Functions.cpp; sourceTree = "<group>"; };
+		537F176B2843160000B57095 /* FunctionsWParams.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = FunctionsWParams.cpp; sourceTree = "<group>"; };
+		537F176D28431BCF00B57095 /* Factorial.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Factorial.cpp; sourceTree = "<group>"; };
+		537F176F2843230100B57095 /* TernaryOperator.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TernaryOperator.cpp; sourceTree = "<group>"; };
+		537F17712843274F00B57095 /* LinkedListsDS.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LinkedListsDS.cpp; sourceTree = "<group>"; };
+		537F177328432BAC00B57095 /* Classes.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Classes.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +78,16 @@
 			isa = PBXGroup;
 			children = (
 				537F17582842F8CE00B57095 /* main.cpp */,
+				537F17612843003100B57095 /* myfirst.cpp */,
+				537F17632843028700B57095 /* NamespacesCpp.cpp */,
+				537F17652843067C00B57095 /* SystemPause.cpp */,
+				537F17672843099500B57095 /* Structures.cpp */,
+				537F17692843118F00B57095 /* Functions.cpp */,
+				537F177328432BAC00B57095 /* Classes.cpp */,
+				537F176B2843160000B57095 /* FunctionsWParams.cpp */,
+				537F176D28431BCF00B57095 /* Factorial.cpp */,
+				537F176F2843230100B57095 /* TernaryOperator.cpp */,
+				537F17712843274F00B57095 /* LinkedListsDS.cpp */,
 			);
 			path = HelloWorld;
 			sourceTree = "<group>";
@@ -119,7 +149,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				537F17642843028700B57095 /* NamespacesCpp.cpp in Sources */,
+				537F17722843274F00B57095 /* LinkedListsDS.cpp in Sources */,
+				537F17622843003100B57095 /* myfirst.cpp in Sources */,
+				537F17682843099500B57095 /* Structures.cpp in Sources */,
+				537F176E28431BCF00B57095 /* Factorial.cpp in Sources */,
+				537F176A2843118F00B57095 /* Functions.cpp in Sources */,
+				537F177428432BAC00B57095 /* Classes.cpp in Sources */,
+				537F17702843230100B57095 /* TernaryOperator.cpp in Sources */,
 				537F17592842F8CE00B57095 /* main.cpp in Sources */,
+				537F176C2843160000B57095 /* FunctionsWParams.cpp in Sources */,
+				537F17662843067C00B57095 /* SystemPause.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
